@@ -39,12 +39,12 @@ public class Main {
    }
 
    public static void createOrders(Exchange exchange, String productId) {
-      // Create a buy order for 0.0001 BTC with rate 7000 EUR/BTC
-      Order buy = exchange.createOrder(OrderSide.buy, productId, "0.0001", "7000");
+      // Create a buy order for 0.01 BTC with rate 7000 EUR/BTC
+      Order buy = exchange.createOrder(OrderSide.buy, productId, "0.01", "7000");
       log.info("Created buy order: {}", buy);
 
-      // Create a sell order for 0.0001 BTC with rate 8500 EUR/BTC
-      Order sell = exchange.createOrder(OrderSide.sell, productId, "0.0001", "8500");
+      // Create a sell order for 0.01 BTC with rate 8500 EUR/BTC
+      Order sell = exchange.createOrder(OrderSide.sell, productId, "0.01", "8500");
       log.info("Created sell order: {}", sell);
 
       // Get all orders for your account
