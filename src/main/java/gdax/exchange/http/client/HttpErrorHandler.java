@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
 
-public class HttpErrorHandler implements ResponseErrorHandler {
+class HttpErrorHandler implements ResponseErrorHandler {
 
    private static final Logger log = LoggerFactory.getLogger(HttpErrorHandler.class);
 

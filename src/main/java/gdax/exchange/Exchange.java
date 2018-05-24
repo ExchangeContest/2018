@@ -6,8 +6,8 @@ import gdax.exchange.json.Order;
 import gdax.exchange.json.OrderRequest;
 import gdax.exchange.json.OrderRequest.OrderSide;
 import gdax.exchange.json.Orderbook;
-import gdax.exchange.json.ServerTime;
 import gdax.exchange.json.Ticker;
+import gdax.exchange.json.Time;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,6 +15,9 @@ import java.util.List;
 
 import org.springframework.http.HttpMethod;
 
+/**
+ * Exchange API.
+ */
 public class Exchange {
 
    private final Client client;
@@ -24,12 +27,12 @@ public class Exchange {
    }
 
    public void init() {
-      ServerTime time = getTime();
+      Time time = getTime();
       client.setServerTime(time.getEpoch().longValue());
    }
 
-   public ServerTime getTime() {
-      return client.http("/time", HttpMethod.GET, ServerTime.class);
+   public Time getTime() {
+      return client.http("/time", HttpMethod.GET, Time.class);
    }
 
    public List<Account> getAccounts() {

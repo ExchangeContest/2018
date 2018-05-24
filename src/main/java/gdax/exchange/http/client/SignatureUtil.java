@@ -5,7 +5,10 @@ import java.util.Base64;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-public class Signature {
+class SignatureUtil {
+
+   private SignatureUtil() {
+   }
 
    private static Mac MAC;
 

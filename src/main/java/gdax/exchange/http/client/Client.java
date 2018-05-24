@@ -1,6 +1,5 @@
 package gdax.exchange.http.client;
 
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 
 import org.slf4j.Logger;
@@ -33,8 +32,6 @@ public class Client {
       this.baseUrl = baseUrl;
 
       restTemplate.setErrorHandler(new HttpErrorHandler());
-      // "2015-11-14T20:46:03.511254Z"
-      mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS"));
    }
 
    public void setServerTime(long gdaxServerTime) {
@@ -78,7 +75,7 @@ public class Client {
       headers.add("accept", "application/json");
       headers.add("content-type", "application/json");
       String timestamp = getTimestamp();
-      String sig = Signature.generate(requestPath, method.name(), requestBody, timestamp, secret);
+      String sig = SignatureUtil.generate(requestPath, method.name(), requestBody, timestamp, secret);
       headers.add("CB-ACCESS-KEY", apiKey);
       headers.add("CB-ACCESS-SIGN", sig);
       headers.add("CB-ACCESS-TIMESTAMP", timestamp);

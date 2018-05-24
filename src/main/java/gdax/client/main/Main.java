@@ -28,22 +28,26 @@ public class Main {
 
       String productId = "BTC-EUR";
 
-      log.info("" + exchange.getOrders().size());
-
+      // Orderbook contains all currently open bid/ask orders
       log.info("Orderbook: " + exchange.getOrderbook(productId));
+
+      // Ticker contains last trade information with best bid, ask at the time
+      // of trade
       log.info("Ticker " + exchange.getTicker(productId));
 
-      //createOrders(exchange, productId);
+      // createOrders(exchange, productId);
    }
 
    public static void createOrders(Exchange exchange, String productId) {
+      // Create a buy order for 0.0001 BTC with rate 7000 EUR/BTC
       Order buy = exchange.createOrder(OrderSide.buy, productId, "0.0001", "7000");
       log.info("Created buy order: {}", buy);
 
+      // Create a sell order for 0.0001 BTC with rate 8500 EUR/BTC
       Order sell = exchange.createOrder(OrderSide.sell, productId, "0.0001", "8500");
       log.info("Created sell order: {}", sell);
 
-      // Get all orders you submitted
+      // Get all orders for your account
       exchange.getOrders();
 
       // Check status on a order by id

@@ -8,14 +8,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OrderRequest {
 
    private String type;
-
    private OrderSide side;
-
    @JsonProperty("product_id")
    private String productId;
-
    private String price;
-
    private String size;
 
    public enum OrderSide {

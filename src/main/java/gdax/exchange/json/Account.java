@@ -13,7 +13,6 @@ public class Account {
    private BigDecimal balance;
    private BigDecimal available;
    private BigDecimal hold;
-
    @JsonProperty("profile_id")
    private String profileId;
 
@@ -57,12 +56,12 @@ public class Account {
       this.currency = currency;
    }
 
-   public String getProfile_id() {
+   public String getProfileId() {
       return profileId;
    }
 
-   public void setProfile_id(String profile_id) {
-      this.profileId = profile_id;
+   public void setProfileId(String profileId) {
+      this.profileId = profileId;
    }
 
    @Override

@@ -13,7 +13,8 @@ public class Order {
    private String size;
    private String type;
    private String status;
-   private String created_at;
+   @JsonProperty("created_at")
+   private String createdAt;
 
    public String getId() {
       return id;
@@ -63,12 +64,12 @@ public class Order {
       this.status = status;
    }
 
-   public String getCreated_at() {
-      return created_at;
+   public String getCreatedAt() {
+      return createdAt;
    }
 
-   public void setCreated_at(String created_at) {
-      this.created_at = created_at;
+   public void setCreatedAt(String createdAt) {
+      this.createdAt = createdAt;
    }
 
    @Override
@@ -76,7 +77,7 @@ public class Order {
       StringBuilder builder = new StringBuilder();
       builder.append("Order [id=").append(id).append(", productId=").append(productId).append(", price=")
             .append(price).append(", size=").append(size).append(", type=").append(type).append(", status=")
-            .append(status).append(", created_at=").append(created_at).append("]");
+            .append(status).append(", created_at=").append(createdAt).append("]");
       return builder.toString();
    }
 
