@@ -14,9 +14,7 @@ public class Main {
     // Add your account ID
     private static final String PROFILE_ID = "";
 
-    // 127.0.0.1:8249
-    // 52.207.119.20:8080
-    private static final String BASE_URL = "http://127.0.0.1:8249";
+    private static final String BASE_URL = "http://crypto-exchange-service-710742e151290ccd.elb.us-east-1.amazonaws.com/";
 
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
